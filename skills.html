@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<div class="cover-image"></div>
+
+ <header>
+  <nav class="navbar">
+    <link rel="stylesheet" href="style.css">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About</a></li>
+        <li><a href="workexperience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="Courses.html">Courses</a></li>
+        <li><a href="Certificates.html">Certificates</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="Contactme.html">Contact</a></li>
+      </ul>
+  </nav>
+</header>
+    
+
+<head>
+<title>Skills</title>
+</head>
+<body>
+
+<p class="skillparagraph">🛠️💻 These are the skills I’ve learned through study, work, and real-world practice. I keep improving and adding new ones as I grow in my IT and web development career.</p>
+</p>
+<br>
+<div class="Skilllist">
+    <ul>
+      <li>ORGANIZED</li>
+      <br>
+      <li>CREATIVITY</li>
+      <br>
+      <li>PC TROUBLESHOOTING & MAINTENANCE</li>
+      <br>
+      <li>CRITICAL THINKING</ol></li>
+      <br>
+      <li>SOFTWARE INSTALLATION & CONFIGURATION</li>
+      <br>
+      <li>SURVEILLANCE SYSTEM SETUP & MAINTENANCE</li>
+      <br>
+      <li>CABLE MANAGEMENT & INSTALLATION</li>
+      <br>
+      <li>CONDUIT & PVC PIPE INSTALLATION</li>
+      <br>
+      <li>HARDWARE DIAGNOSIS & REPAIR</li>
+      <br>
+      <li>REMOTE DESKTOP SUPPORT & CLIENT COMMUNICATION</li>
+      <br>
+      <li>ATTENTION TO DETAIL</li>
+      <br>
+      <li>SAFETY AWARENESS</li>
+      <br>
+      <li>TEAMWORK & COLLABORATION</li>
+      <br>
+      <li>ADAPTABILITY & FLEXIBILITY</li>
+      <br>
+      <li>STRONG WORK ETHIC</li>
+      <br>
+      <li>CUSTOMER-FOCUSED MINDSET</li>
+      <br>
+      <li>TABLE CLEARING & SUPPORTING KITCHEN RETURN ITEMS</li>
+      <br>
+      <li>ADAPTABLE TO DIFFERENT TASKS WHEN NEEDED</li>
+      <br>
+      <li>ASSISTING WITH FOOD DELIVERIES WHEN REQUIRED</li>
+      <br>
+      <li>BUILDING STATIC PERSONAL WEBSITES FROM SCRATCH</li>
+      <br>
+      <li>PRACTICE WITH VISUAL STUDIO CODE</li>
+      <br>
+      <li>WEBSITE DEBUGGING & ERROR FIXING (BEGINNER LEVEL)</li>
+      <br>
+      <li>HTML STRUCTURING & PAGE MARKUP</li>
+      <br>
+      <li>CSS LAYOUT & RESPONSIVE DESIGN BASICS</li>
+      <br>
+      <li>SELF-TAUGHT FRONT-END DEVELOPMENT</li>
+    </ul>
+</div>
+
+<script>
+const acc = document.getElementsByClassName("accordion-btn");
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    const panel = this.nextElementSibling;
+
+    // Close all other accordions first (optional)
+    const allPanels = document.querySelectorAll(".accordion-content");
+    allPanels.forEach(p => {
+      if (p !== panel) p.style.display = "none";
+    });
+
+    // Toggle this panel
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<!-- LinkedIn Floating Button -->
+<a href="https://www.linkedin.com/in/www.linkedin.com/in/rupert-burger-16281b212" class="linkedin-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="linkedin-icon" alt="LinkedIn" />
+</a>
+
+<a href="https://wa.me/27815173861" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WhatsApp" />
+</a>
+
+</body>
+</html>

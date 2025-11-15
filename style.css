@@ -1,0 +1,232 @@
+/* Body /
+body {
+font-family: 'Poppins', sans-serif;
+background-color: #F7F9FB;
+color: #222;
+margin: 0;
+padding: 0;
+margin-top: 240px; / 60px navbar + 200px cover image */
+
+
+/* Fixed Navbar */
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #26C7BE;
+padding: 15px 0;
+z-index: 1000;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+overflow: hidden;
+}
+
+/* Navbar List */
+.navbar ul {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+flex-wrap: nowrap;
+list-style: none;
+margin: 0;
+padding: 0;
+width: 80%;
+}
+
+/* Navbar Links */
+.navbar li {
+margin: 0 15px;
+}
+
+.navbar a {
+text-decoration: none;
+color: white;
+font-weight: 500;
+font-size: 20px;
+white-space: nowrap;
+}
+
+.navbar a:hover {
+text-decoration: underline;
+}
+
+/* Home Section */
+.home-section {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 85vh;
+}
+
+.home-container {
+display: flex;
+align-items: center;
+gap: 40px;
+max-width: 900px;
+padding: 20px;
+}
+
+/* Profile Picture */
+.profile-pic img {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+object-fit: cover;
+border: 4px solid #26C7BE;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Intro Text */
+h1.intro-text {
+font-size: 85px;
+margin-bottom: 2px;
+color: #353030;
+}
+
+p.intro-text {
+font-size: 40px;
+color: #353030;
+font-weight: 500;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+.home-container {
+flex-direction: column;
+text-align: center;
+}
+
+.profile-pic img {
+width: 150px;
+height: 150px;
+}
+}
+
+.accordion-content {
+display: none;
+padding: 10px 15px;
+border-left: 3px solid #222;
+background-color: #4fdfd7;
+opacity: 0.55;
+}
+
+/* Cover Image */
+.cover-image {
+background-image: url('Rupert Burger CV cover img.png');
+background-size: cover;
+background-position: center;
+height: 600px;
+width: 100%;
+position: fixed;
+top: 45px;
+left: 0;
+z-index: -1;
+opacity: 2.5;
+}
+
+/* Prevent overlap */
+body {
+margin-top: 260px;
+}
+
+.cover-image::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(90, 85, 85, 0.3);
+}
+
+h2.Aboutme {
+font-size: 85px;
+color: #000000;
+font-weight: 500;
+}
+
+p.Mylongstory,
+p.IT-career {
+font-size: 25px;
+color: #000000;
+font-weight: 500;
+}
+
+h2.about-intro,
+h2.Entertainment,
+h2.freetimefunheader2 {
+font-size: 50px;
+font-weight: 500;
+color: #000000;
+}
+
+p.about-intro,
+p.Entertainment,
+p.freetimefunparagraph {
+font-size: 20px;
+color: #000000;
+font-weight: 500;
+}
+
+h3.freetimefunheader3 {
+font-size: 50px;
+font-weight: 500;
+color: #1f262a;
+}
+
+p.expmessage,
+p.skillparagraph,
+p.gallery-intro,
+p.Projectparagraph,
+p.Sorrymessage {
+font-family: 'Courier New', monospace;
+font-size: 25px;
+font-weight: bold;
+}
+
+.Skilllist {
+font-family: 'Courier New', monospace;
+font-size: 22px;
+font-weight: bold;
+list-style-type: square;
+}
+
+.Skilllist li {
+margin-bottom: 6px;
+}
+
+.whatsapp-float {
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 9999;
+}
+
+.whatsapp-icon {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+cursor: pointer;
+transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+transform: scale(1.1);
+}
+
+/* LinkedIn Floating Button */
+.linkedin-float {
+    position: fixed;
+    bottom: 90px; /* slightly above WhatsApp */
+    right: 20px;
+    z-index: 100;
+}
+
+.linkedin-icon {
+    width: 50px;
+    height: 50px;
+}
