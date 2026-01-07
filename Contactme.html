@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+  <div class="cover-image"></div>
+
+      <header>
+        <nav class="navbar">
+            <link rel="stylesheet" href="style.css">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutme.html">About</a></li>
+      <li><a href="workexperience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="Courses.html">Courses</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="Remote Fix & Support (Freelance).html">Remote Fix & Support (Freelance)</a></li>
+      <li><a href="Contactme.html">Contact</a></li>
+    </ul>
+        </nav>
+      </header>
+
+<!-- TOP-LEFT CONTACT BUTTONS -->
+    <div class="top-right-buttons">
+    <a href="mailto:burgerrupert@gmail.com" class="top-btn email-btn email-float">
+        📧Mail
+    </a>
+    <a href="https://commons.wikimedia.org/wiki/File:Fiverr_Logo_fiverr.png" target="_blank" class="top-btn fiverr-btn fiverr-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Fiverr_Logo_fiverr.png" class="fiverr-icon" alt="Fiverr Icon">
+        Fiverr
+    </a>
+    </div>
+
+<head>
+<title>Contact Me</title>
+</head>
+<body>
+
+<h2 class="Contactme">My Personal Details:</h2>
+
+<ul class="personal-details">
+  <li><strong>Name:</strong> Rupert Burger</li>
+  <li><strong>Number:</strong> +27 81 517 3861</li>
+  <li><strong>Email:</strong> <a href="mailto:burgerrupert@gmail.com">burgerrupert@gmail.com</a></li>
+  <li><strong>Employment Status:</strong> Unemployed full time – Working weekends only</li>
+  <li><strong>Professional Title:</strong> IT Support Technician / Full-Stack Web Developer (Studying now/learning myself use chatgpt for better understanding & where I can improve my coding too.)</li>
+  <li><strong>Nationality:</strong> South African</li>
+  <li><strong>Languages:</strong> English (Intermediate), Afrikaans (Fluent)</li>
+  <li><strong>Availability:</strong> Immediately available</li>
+  <li><strong>Work Permit / Visa Status:</strong> Open to relocation</li>
+  <li><strong>Passport:</strong> Yes (expire 2029)</li>
+  <li><strong>Location:</strong> Gauteng, South Africa</li>
+  <li><strong>License:</strong> Code B</li>
+  <li><strong>Birthday:</strong> 6 January 1997 (29)</li>
+  <li><strong>LinkedIn:</strong> 
+    <a href="https://www.linkedin.com/in/rupert-burger-16281b212" target="_blank">
+      View LinkedIn Profile
+    </a>
+  </li>
+</ul>
+
+<script>
+const acc = document.getElementsByClassName("accordion-btn");
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    const panel = this.nextElementSibling;
+
+    // Close all other accordions first (optional)
+    const allPanels = document.querySelectorAll(".accordion-content");
+    allPanels.forEach(p => {
+      if (p !== panel) p.style.display = "none";
+    });
+
+    // Toggle this panel
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<b><p>Download or view my Resume/CV:</p></b>
+<a href="files/Rupert_Burger_Resume.pdf" target="_blank" 
+   style="display: inline-block; background-color: #26C7BE; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+📄 Open My Resume/CV (PDF)
+</a>
+<br>
+<b><p>Download or view my CV (Gauteng/Open to relocate):</p></b>
+<a href="files/CV Rupert Burger - GP versatile (Updated November 2025).pdf" target="_blank" 
+   style="display: inline-block; background-color: #26C7BE; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+📄 Open My CV (PDF)
+</a>
+
+<!-- LinkedIn Floating Button -->
+<a href="https://www.linkedin.com/in/rupert-burger-16281b212" class="linkedin-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="linkedin-icon" alt="LinkedIn" />
+</a>
+
+<a href="https://wa.me/27815173861" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WhatsApp" />
+</a>
+
+</body>
+</html>
