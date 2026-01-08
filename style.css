@@ -1,0 +1,654 @@
+/* ========================================
+   BASE STYLES
+   ======================================== */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F7F9FB;
+    background-image: url("rupert-burger-cv-cover-img.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    padding-top: 70px; /* FIXED: Only need space for navbar */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ========================================
+   FIXED NAVBAR - DESKTOP
+   ======================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #26C7BE;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   MOBILE NAVBAR FIX
+   ======================================== */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Slightly less on mobile */
+    }
+
+    .navbar {
+        justify-content: flex-start !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding: 12px 0;
+        scrollbar-width: none;
+    }
+    
+    .navbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .navbar ul {
+        display: flex;
+        flex-wrap: nowrap;
+        min-width: max-content;
+        padding: 0 10px;
+        margin: 0;
+        justify-content: flex-start;
+    }
+    
+    .navbar li {
+        margin: 0 5px;
+        flex-shrink: 0;
+    }
+    
+    .navbar li:first-child {
+        margin-left: 5px;
+    }
+    
+    .navbar li:last-child {
+        margin-right: 10px;
+    }
+    
+    .navbar a {
+        font-size: 16px;
+        padding: 8px 10px;
+        display: block;
+        white-space: nowrap;
+    }
+}
+
+/* ========================================
+   COVER IMAGE (Home Page Only)
+   ======================================== */
+.cover-image {
+    background-image: url('Rupert Burger CV cover img.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+    position: relative; /* FIXED: Changed from fixed to relative */
+    margin-top: 0;
+    z-index: 0;
+}
+
+.cover-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(90, 85, 85, 0.3);
+}
+
+@media (max-width: 768px) {
+    .cover-image {
+        height: 300px;
+    }
+}
+
+/* ========================================
+   HOME SECTION
+   ======================================== */
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* FIXED: Changed from height to min-height */
+    padding: 40px 20px;
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Profile Picture */
+.profile-pic img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #26C7BE;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Intro Text */
+h1.intro-text {
+    font-size: 85px;
+    margin-bottom: 2px;
+    color: #1a1a1a;
+}
+
+p.intro-text {
+    font-size: 40px;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    h1.intro-text {
+        font-size: 48px;
+    }
+    
+    p.intro-text {
+        font-size: 24px;
+    }
+}
+
+/* ========================================
+   HEADINGS & PARAGRAPHS
+   ======================================== */
+h2.Aboutme {
+    font-size: 85px;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+p.Mylongstory,
+p.IT-career {
+    font-size: 25px;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+h2.about-intro,
+h2.Entertainment,
+h2.freetimefunheader2 {
+    font-size: 50px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+h3.freetimefunheader3 {
+    font-size: 50px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+p.my-goal-list,
+p.game-goals {
+    font-family: 'Courier New', monospace;
+    font-size: 17px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+p.Aboutmeparagraphmsg,
+p.Recyclingmsg {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+p.expmessage,
+p.gallery-intro,
+p.Projectparagraph,
+p.Ownwebpage,
+p.freetimefun,
+p.about-intro,
+p.Entertainment,
+p.freetimefunparagraph,
+p.Weirdgamemoney,
+p.standoutmessage {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+p.Chapter1-9A+ {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold; 
+    color: #1a1a1a;
+}
+
+p.Category1 {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold; 
+    color: #1a1a1a;
+}
+
+p.MicrosoftcourseParagraph {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+p.skillparagraph {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+p.OramaRoadhouse {
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    color: #1a1a1a;
+}
+
+p.Headerskillslist {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+p.CompTIA-A+,
+p.CompTIA-N+,
+p.CompTIA-S+,
+p.Extracertificates {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    color: #1a1a1a; 
+}
+
+.Skilllist li {
+    margin-bottom: 6px;
+}
+
+h1.ITservicesheader {
+    font-size: 55px;
+    margin-bottom: 2px;
+    color: #1a1a1a;
+}
+
+p.ITservicesParagraphtop,
+p.ITserviceslist,
+p.availability-note {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+p.Galleryimg-MSG {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+/* ========================================
+   AVAILABILITY SECTION
+   ======================================== */
+.availability-section {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.availability-note {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.availability-box {
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.availability-box h3 {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.availability-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.availability-box li {
+    padding: 4px 0;
+    font-size: 18px;
+}
+
+/* ========================================
+   FLOATING BUTTONS
+   ======================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+.linkedin-float {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.linkedin-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.top-right-buttons {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+}
+
+.top-btn {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transition: 0.3s ease;
+}
+
+.top-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+.fiverr-icon {
+    width: 28px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.email-icon {
+    width: 26px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .top-right-buttons {
+        top: 70px;
+    }
+}
+
+/* ========================================
+   GLASS CARDS
+   ======================================== */
+.glass-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 20px;
+    border: 2px solid rgba(38, 199, 190, 0.4);
+    box-shadow: 0 4px 25px rgba(38, 199, 190, 0.15);
+    color: #1a1a1a;
+    transition: .3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(38, 199, 190, 0.25);
+    border-color: rgba(38, 199, 190, 0.8);
+}
+
+.glass-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #0A4D4D;
+}
+
+.glass-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* ========================================
+   ACCORDION
+   ======================================== */
+.accordion-btn {
+    width: 100%;
+    background: rgba(38, 199, 190, 0.25);
+    color: #0A4D4D;
+    border: 2px solid rgba(38, 199, 190, 0.5);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: left;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.accordion-btn:hover {
+    background: rgba(38, 199, 190, 0.4);
+    border-color: rgba(38, 199, 190, 0.9);
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px 15px;
+    border-left: 3px solid #222;
+    background-color: #4fdfd7;
+    opacity: 0.55;
+}
+
+.accordion-content a {
+    color: #292c2c;
+    text-decoration: none;
+}
+
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+
+.accordion-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+/* ========================================
+   GALLERY
+   ======================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+.gallery-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(38, 199, 190, 0.4);
+    border-radius: 18px;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+    color: #1a1a1a;
+}
+
+.gallery-btn {
+    width: 100%;
+    background: rgba(38, 199, 190, 0.25);
+    border: 2px solid rgba(38, 199, 190, 0.5);
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #0A4D4D;
+    font-weight: 600;
+}
+
+.gallery-btn:hover {
+    background: rgba(38, 199, 190, 0.4);
+}
+
+.gallery-content {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 12px;
+    transition: max-height 0.3s ease;
+}
+
+.thumb {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid rgba(38, 199, 190, 0.4);
+}
+
+/* ========================================
+   LIGHTBOX
+   ======================================== */
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    user-select: none;
+}
+
+.left { left: 40px; }
+.right { right: 40px; }
+
+.nav-btn:hover {
+    color: cyan;
+}
