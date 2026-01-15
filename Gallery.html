@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="cover-image"></div>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<header>
+  <nav class="navbar">
+    <link rel="stylesheet" href="style.css">
+      <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Aboutme.html">About</a></li>
+      <li><a href="Workexperience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="Courses.html">Courses</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="Remote Fix & Support (Freelance).html">Remote Fix & Support (Freelance)</a></li>
+      <li><a href="Contactme.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <p class="Galleryimg-MSG">
+        <b>Note on media and portfolio content</b>
+        <br>
+        Some image galleries are currently presented as PDF portfolios linked via Google Drive. This is a temporary solution due to hosting and file-size limitations while using GitHub Pages. The goal is to ensure that all work samples remain accessible and viewable without delay. As resources allow, the site will be upgraded to a paid hosting environment to fully integrate image galleries and larger documents directly on the website.
+        <br>
+        Thank you for taking the time to view my work and for your understanding while the site continues to improve.
+    </p>
+
+<main>
+
+<!-- GRID OF 3 BLOCKS -->
+<div class="gallery-grid">
+
+    <!-- GROUP 1 -->
+    <div class="gallery-card">
+        <button class="gallery-btn">Laser operator - Before and after setups and nestings & parts PDF</button>
+        <a href="https://drive.google.com/file/d/1iPTLaOSnFlX5rrdsGP_I2AKae80kF6cC/view?usp=drive_link" target="_blank" 
+                style="display: inline-block; background-color: #26C7BE; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+              📄 Open or download Laser cutting setups, nesting & parts PDF
+              </a>
+        <div class="gallery-content" data-folder="Laser cutting gallery PDF">
+            
+        </div>
+    </div>
+
+    <!-- GROUP 2 -->
+    <div class="gallery-card">
+        <button class="gallery-btn">Empty Folder</button>
+
+        <div class="gallery-content" data-folder="Parts cutted">
+            
+        </div>
+    </div>
+
+    <!-- GROUP 3 (EMPTY FOR NOW) -->
+    <div class="gallery-card">
+        <button class="gallery-btn">Empty Folder</button>
+
+        <div class="gallery-content" data-folder="folder3">
+            <p class="OramaRoadhouse"></p>
+        </div>
+    </div>
+
+</div>
+
+<!-- GRID OF 3 BLOCKS row 2 -->
+<div class="gallery-grid">
+
+    <!-- GROUP 1 -->
+    <div class="gallery-card">
+        <button class="gallery-btn">Background images for website</button>
+
+        <div class="gallery-content" data-folder="">
+           <p class="GalleryMSG">
+            This gallery showcases background images I previously tested within my website layout. While visually strong, some of these images reduced text readability due to color contrast and layout limitations. As part of improving usability and accessibility, I revised the design and selected a new background that provides clearer text visibility and a more professional presentation.
+            <br>
+            <br>
+            The current background image is included to show the final design direction and overall visual consistency. 🎨📐
+           </p>
+           <img src="background images/Rupert Burger CV cover img original.png" class="thumb" onclick="openLightbox(3)">
+           <img src="background images/Rupert Burger CV cover img original 2.png" class="thumb" onclick="openLightbox(3)">
+           <img src="background images/Rupert Burger CV cover img original 3.png" class="thumb" onclick="openLightbox(3)">
+        </div>
+    </div>
+
+    <!-- GROUP 2 -->
+    <div class="gallery-card">
+        <button class="gallery-btn">Empty folder</button>
+
+        <div class="gallery-content" data-folder="">
+            <p class="GalleryMSG">
+            Please note this folders is empty & reserved for more experience Gallery pictures in the future. I want to keep my work experience first then my entertainment gallery always last.
+            </p>
+        </div>
+    </div>
+
+    <!-- GROUP 3 (Entertainment) -->
+    <div class="gallery-card">
+        <button class="gallery-btn">Empty folder</button>
+
+        <div class="gallery-content" data-folder="EntertainmentGallery">
+            <p class="GalleryMSG">
+
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</main>
+
+<!-- LIGHTBOX (fullscreen popup) -->
+<div id="lightbox">
+    <span id="close-btn">&times;</span>
+    <img id="lightbox-img">
+
+    <span class="nav-btn left">&#10094;</span>
+    <span class="nav-btn right">&#10095;</span>
+</div>
+
+<script>
+// ACCORDION
+const btns = document.querySelectorAll(".gallery-btn");
+
+btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const panel = btn.nextElementSibling;
+
+        // Close other panels
+        document.querySelectorAll(".gallery-content").forEach(content => {
+            if (content !== panel) content.style.maxHeight = null;
+        });
+
+        // Toggle open
+        panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
+    });
+});
+
+// LIGHTBOX
+let images = [];
+let currentIndex = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll(".thumb").forEach((img, index) => {
+    img.addEventListener("click", (e) => {
+        const group = e.target.parentElement.querySelectorAll(".thumb");
+        images = [...group].map(i => i.src);
+        currentIndex = Array.from(group).indexOf(e.target);
+
+        showImage();
+        lightbox.style.display = "flex";
+    });
+});
+
+function showImage() {
+    lightboxImg.src = images[currentIndex];
+}
+
+// NEXT / PREV
+document.querySelector(".right").onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+};
+
+document.querySelector(".left").onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+};
+
+// CLOSE
+document.getElementById("close-btn").onclick = () => {
+    lightbox.style.display = "none";
+};
+
+lightbox.onclick = (e) => {
+    if (e.target === lightbox) lightbox.style.display = "none";
+};
+</script>
+</body>
+</html>
+
+
+<!-- LinkedIn Floating Button -->
+<a href="https://www.linkedin.com/in/rupert-burger-16281b212" class="linkedin-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="linkedin-icon" alt="LinkedIn" />
+</a>
+
+
+<a href="https://wa.me/27815173861" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WhatsApp" />
+</a>
+
+</body>
+</html>
