@@ -24,6 +24,8 @@ body {
         -webkit-overflow-scrolling: touch;
         padding: 15px 0;
         scrollbar-width: none; /* Hide scrollbar on Firefox */
+        background-attachment: scroll;
+        background-position: top center;
     }
     
     /* Hide scrollbar on Chrome/Safari */
@@ -743,3 +745,4 @@ transform: scale(1.1);
 .nav-btn:hover {
     color: cyan;
 }
+
