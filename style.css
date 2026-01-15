@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #F7F9FB;
+    background-color: #0e1013;
     background-image: url("rupert-burger-cv-cover-img.jpg");
     background-size: cover;
     background-position: center;
@@ -745,5 +745,6 @@ transform: scale(1.1);
 .nav-btn:hover {
     color: cyan;
 }
+
 
 
