@@ -1,0 +1,831 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0e1013;
+    background-image: url("rupert-burger-cv-cover-img.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #E6EAF0;
+    margin: 0;
+    padding: 0;
+    min-height: 100svh;
+    padding-top: 260px; /* instead of margin-top */
+}
+
+/* ========================================
+   MOBILE NAVBAR FIX - COMPLETE
+   ======================================== */
+@media (max-width: 768px) {
+    /* Navbar container */
+    .navbar {
+        justify-content: flex-start !important; /* Start at left, not center */
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding: 15px 0;
+        scrollbar-width: none; /* Hide scrollbar on Firefox */
+    }
+    
+    /* Hide scrollbar on Chrome/Safari */
+    .navbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Navbar list */
+    .navbar ul {
+        display: flex;
+        flex-wrap: nowrap;
+        min-width: max-content;
+        padding: 0 10px; /* Small padding on both sides */
+        margin: 0;
+        justify-content: flex-start;
+    }
+    
+    /* List items */
+    .navbar li {
+        margin: 0 5px;
+        flex-shrink: 0;
+    }
+    
+    /* First item (Home) - extra left padding */
+    .navbar li:first-child {
+        margin-left: 5px;
+    }
+    
+    /* Last item (Contact) - extra right padding */
+    .navbar li:last-child {
+        margin-right: 10px;
+    }
+    
+    /* Links */
+    .navbar a {
+        font-size: 17px;
+        padding: 8px 12px;
+        display: block;
+        white-space: nowrap;
+    }
+}
+
+
+/* Fixed Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #26C7BE;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow-x: auto; /* CHANGED: Allow horizontal scroll */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Navbar List */
+.navbar ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px; /* ADDED: Padding on sides */
+    min-width: max-content; /* ADDED: Ensures content doesn't wrap */
+}
+
+/* Navbar Links */
+.navbar li {
+margin: 0 10px;
+}
+
+.navbar a {
+text-decoration: none;
+color: white;
+font-weight: 500;
+font-size: 20px;
+white-space: nowrap;
+}
+
+.navbar a:hover {
+text-decoration: underline;
+}
+
+/* Home Section */
+.home-section {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 85vh;
+}
+
+.home-container {
+display: flex;
+align-items: center;
+gap: 40px;
+max-width: 900px;
+padding: 20px;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Profile Picture */
+.profile-pic img {
+width: 210px;
+height: 210px;
+border-radius: 50%;
+object-fit: cover;
+border: 4px solid #26C7BE;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Intro Text */
+h1.intro-text {
+font-size: 85px;
+margin-bottom: 2px;
+color: #E6EAF0;
+}
+
+p.intro-text {
+font-size: 40px;
+color: #E6EAF0;
+font-weight: 500;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+.home-container {
+flex-direction: column;
+text-align: center;
+}
+
+.profile-pic img {
+width: 150px;
+height: 150px;
+}
+}
+
+.accordion-content {
+display: none;
+padding: 10px 15px;
+border-left: 3px solid #222;
+background-color: #4fdfd7;
+opacity: 0.55;
+}
+
+/* Cover Image */
+.cover-image {
+background-image: url('Rupert Burger CV cover img.png');
+background-size: cover;
+background-position: center;
+height: 600px;
+width: 100%;
+position: fixed;
+top: 45px;
+left: 0;
+z-index: -1;
+opacity: 2.5;
+}
+
+.cover-image::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(90, 85, 85, 0.3);
+}
+
+h2.Aboutme {
+font-size: 85px;
+color: #E6EAF0;
+font-weight: 500;
+}
+
+p.IT-career,
+p.Mylongstory,
+p.freetimefun {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+ul.freetimefun {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+h2.about-intro,
+h2.Entertainment,
+h2.freetimefunheader2 {
+font-size: 50px;
+font-weight: 500;
+color: #E6EAF0;
+}
+
+p.about-intro {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+h3.freetimefunheader3 {
+font-size: 50px;
+font-weight: 500;
+color: #1A1A1A;
+}
+
+ul.my-goal-list {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+p.Aboutmeparagraphmsg {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+p.Recyclingmsg {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+ul.CV-remote {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+p.expmessage,
+p.gallery-intro,
+p.Projectparagraph,
+p.Entertainment,
+p.freetimefunparagraph,
+p.standoutmessage {
+font-family: 'Courier New', monospace;
+font-size: 25px;
+font-weight: bold;
+color: #E6EAF0;
+}
+
+p.Projectparagraph {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+/* Projects */
+p.Category1,
+p.Ownwebpage,
+p.Chapter1-9A {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold; 
+    color: #1A1A1A;
+}
+/* Courses */
+p.MicrosoftcourseParagraph {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: #1A1A1A;;
+}
+
+
+p.skillparagraph {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+/* Experience tab */
+p.FreelanceITsupport,
+ul.FreelanceITsupport,
+p.RTH,
+p.LO {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+p.OramaRoadhouse {
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    color: #E6EAF0;
+}
+
+/* skills header */
+li.Headerskillslist {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+div.skillslistorder {
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+ul.personal-details {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+/* Certificate paragraph */
+p.skillparagraph,
+ul.CompTIA,
+ul.CompTIA,
+ul.Extracertificates {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0; 
+}
+
+.Skilllist li {
+margin-bottom: 6px;
+}
+
+/* Freelancer page header */
+h1.ITservicesheader {
+    font-size: 55px;
+    margin-bottom: 2px;
+    color: #1A1A1A;
+}
+
+/* Paragraph on top */ 
+ul.ITservicesParagraphtop,
+ul.ITserviceslist,
+p.availability-note {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+/* Gallery message paragraph */
+p.Galleryimg-MSG {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+/* Entertainment page */
+p.entertainmentpagemsg {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6EAF0;
+}
+
+/* Entertainment page buttons */
+p.Myfunentertainment,
+p.buttonmsgentertainment {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+ul.buttonmsgentertainment {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+ol.buttonmsgentertainment {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+/* Table layout */
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* Column sizing */
+
+th:nth-child(1) { width: 240px; } /* Game Name */
+th:nth-child(2) { width: 80px; }  /* Version */
+th:nth-child(3) { width: 80px; }  /* Owned */
+th:nth-child(4) { width: 80px; }  /* PS Plus */
+th:nth-child(5) { width: 110px; } /* Status */
+th:nth-child(6) { width: 90px; }  /* Platinum */
+th:nth-child(7) { width: 90px; }  /* 100% complete */
+th:nth-child(8) { width: 140px; } /* Total trophies */
+th:nth-child(9) { width: 160px; } /* Unobtainable */
+
+/* Header styling */
+th {
+  background-color: #1A1A1A;
+  color: white;
+  padding: 8px;
+}
+
+table {
+              border-collapse: collapse;
+              width: 100%;
+              font-family: Arial, sans-serif;
+            }
+
+            th, td {
+              border: 1.5px solid #1A1A1A;
+              padding: 8px;
+              text-align: left;
+            }
+
+            /* SAME color for header + all rows */
+            th, td {
+              background-color: #e0d0d0;
+              color: #1A1A1A; /* optional but recommended */
+            }
+
+div {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.availability-section {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.availability-note {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.availability-box {
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #4d4545;
+}
+
+.availability-box h3 {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.availability-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.availability-box li {
+    padding: 4px 0;
+    font-size: 18px;
+}
+
+.whatsapp-float {
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 9999;
+}
+
+.whatsapp-icon {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+cursor: pointer;
+transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+transform: scale(1.1);
+}
+
+/* LinkedIn Floating Button */
+.linkedin-float {
+    position: fixed;
+    bottom: 90px; /* slightly above WhatsApp */
+    right: 20px;
+    z-index: 100;
+}
+
+.linkedin-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* TOP-LEFT BUTTON CONTAINER Fiverr & Email */
+.top-left-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+    margin-top: 80px; /* adjusts spacing under navbar */
+}
+
+/* BUTTON STYLE */
+.top-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: #e9f5ff;
+    background: rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.18);
+    transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.top-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(0, 255, 255, 0.25);
+    border-color: rgba(0, 255, 255, 0.7);
+}
+
+/* Fiverr green accent */
+.fiverr-btn {
+    color: #E6EAF0;
+}
+
+/* Email button accent */
+.email-btn {
+    color: #E6EAF0;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+    .top-right-buttons {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 100px;
+    }
+}
+
+.top-right-buttons {
+    position: relative;
+    z-index: 9999;
+}
+
+/* Floating Button Container */
+.top-right-buttons {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+/* Floating Button Base */
+.top-btn {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.top-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Fiverr Icon */
+.fiverr-icon {
+    width: 28px;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Email Icon (if image used) */
+.email-icon {
+    width: 26px;
+    height: auto;
+}
+
+
+/* 3 Block Layout */
+.glass-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+/* GLASS CARD */
+.glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    box-shadow: 0 4px 25px rgba(0, 255, 255, 0.12);
+    color: #1A1A1A;
+    transition: .3s ease;
+}
+
+/* HOVER EFFECT */
+.glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.25);
+    border-color: rgba(0, 255, 255, 0.8);
+}
+
+/* Card Titles */
+.glass-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #E6EAF0; /* soft aqua heading */
+}
+
+/* Card Description */
+.glass-card p {
+    font-size: 1rem;
+    opacity: 0.65;
+}
+
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+
+.accordion-content a {
+    color: #E6EAF0;
+    text-decoration: none;
+}
+
+/* LIST STYLING INSIDE */
+.accordion-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.accordion-btn:hover {
+    background: rgba(12, 202, 186, 0.25);
+}
+
+/* ACCORDION BUTTON */
+.accordion-btn {
+    width: 100%;
+    background: rgba(0, 255, 255, 0.10);
+    color: #E6EAF0;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: left;
+    transition: .3s;
+}
+
+/* GRID LAYOUT */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+/* GLASS CARD */
+.gallery-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 18px;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+    color: #E6EAF0;
+}
+
+/* BUTTON */
+.gallery-btn {
+    width: 100%;
+    background: rgba(0,255,255,0.15);
+    border: 1px solid rgba(0,255,255,0.4);
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #E6EAF0;
+}
+
+/* HIDDEN CONTENT */
+.gallery-content {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 12px;
+    transition: max-height 0.3s ease;
+}
+
+/* THUMBNAILS */
+.thumb {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid rgba(0,255,255,0.4);
+}
+
+/* LIGHTBOX */
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
+/* CLOSE BUTTON */
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* NAV ARROWS */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    user-select: none;
+}
+
+.left { left: 40px; }
+.right { right: 40px; }
+
+.nav-btn:hover {
+    color: cyan;
+}
