@@ -12,6 +12,13 @@ body {
     padding-top: 260px; /* instead of margin-top */
 }
 
+.profile-pic {
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ========================================
    MOBILE NAVBAR FIX - COMPLETE
    ======================================== */
@@ -829,3 +836,4 @@ transform: scale(1.1);
 .nav-btn:hover {
     color: cyan;
 }
+
