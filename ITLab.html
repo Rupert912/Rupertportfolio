@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <!--
+    ============================================================
+    IT LAB PAGE — made by the Rupert IT Lab ("Public page" > Download)
+    To update: download a fresh copy from the lab and replace this file.
+    Only the public parts of the lab are in here: no test scores,
+    no weak topics, no notes.
+    ============================================================
+  -->
+  <style>
+    body { --lab-ink:#E6EAF0; --lab-mut:#b4c0cc; --lab-card:rgba(9,13,17,.66); --lab-line:rgba(0,255,255,.25); --lab-acc:#26C7BE; --lab-good:#57e0a0; --lab-now:#FFB74D; }
+    body.light-mode { --lab-ink:#1A1A1A; --lab-mut:#3d4650; --lab-card:rgba(255,255,255,.78); --lab-line:rgba(0,0,0,.2); --lab-acc:#0c7f79; --lab-good:#12754a; --lab-now:#a35a00; }
+    .lab-wrap { max-width:1100px; margin:0 auto; padding:0 20px 120px; font-family:'Courier New',monospace; color:var(--lab-ink); }
+    .lab-wrap * { box-sizing:border-box; }
+    .lab-wrap p, .lab-wrap li, .lab-wrap h1, .lab-wrap h2, .lab-wrap h3 { color:var(--lab-ink); margin:0; }
+    .lab-card { background:var(--lab-card); border:1px solid var(--lab-line); border-radius:16px; padding:22px 26px; margin:18px 0; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
+    .lab-wrap h1 { font-size:44px; font-weight:700; line-height:1.1; }
+    .lab-wrap h2 { font-size:26px; font-weight:700; margin-bottom:14px; }
+    .lab-wrap h3 { font-size:19px; font-weight:700; }
+    .lab-lead { font-size:19px; font-weight:700; margin-top:10px !important; max-width:70ch; }
+    .lab-mut { color:var(--lab-mut) !important; font-size:15px; font-weight:700; }
+    .lab-route { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); }
+    .lab-stop { position:relative; padding:34px 12px 0 0; }
+    .lab-stop::before { content:""; position:absolute; top:10px; left:0; right:0; height:4px; background:var(--lab-line); }
+    .lab-stop::after { content:""; position:absolute; top:1px; left:0; width:22px; height:22px; border-radius:50%; border:4px solid var(--lab-mut); background:var(--lab-card); }
+    .lab-stop.done::before { background:var(--lab-good); }
+    .lab-stop.done::after { background:var(--lab-good); border-color:var(--lab-good); }
+    .lab-stop.now::after { border-color:var(--lab-now); }
+    .lab-stop small { display:block; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--lab-mut); }
+    .lab-stop.done small { color:var(--lab-good); }
+    .lab-stop.now small { color:var(--lab-now); }
+    .lab-stop b { display:block; font-size:17px; }
+    .lab-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:16px; }
+    .lab-item { border:1px solid var(--lab-line); border-radius:12px; padding:14px 16px; display:flex; flex-direction:column; gap:6px; font-size:16px; font-weight:700; }
+    .lab-pill { display:inline-block; font-size:12px; font-weight:700; padding:2px 9px; border-radius:99px; border:1px solid var(--lab-line); color:var(--lab-mut); white-space:nowrap; }
+    .lab-pill.good { color:var(--lab-good); border-color:var(--lab-good); }
+    .lab-pill.now { color:var(--lab-now); border-color:var(--lab-now); }
+    .lab-row { display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .lab-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:17px; font-weight:700; }
+    .lab-list li { display:flex; gap:10px; align-items:baseline; }
+    .lab-tick { color:var(--lab-good); flex:none; width:20px; }
+    .lab-todo { color:var(--lab-mut); flex:none; width:20px; }
+    .lab-bar { height:8px; border-radius:99px; background:var(--lab-line); overflow:hidden; flex:1; min-width:80px; }
+    .lab-bar i { display:block; height:100%; background:var(--lab-acc); }
+    .lab-panel { display:none; padding:16px 4px 4px; }
+    .lab-panel.open { display:block; }
+    .lab-wrap .accordion-btn { margin-top:10px; font-family:inherit; font-weight:700; display:flex; justify-content:space-between; gap:12px; align-items:center; }
+    .lab-dots { letter-spacing:3px; color:var(--lab-acc); white-space:nowrap; }
+    .lab-nums { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; }
+    .lab-nums b { display:block; font-size:34px; line-height:1.1; }
+    .lab-btn { display:inline-block; background:#26C7BE; color:#1A1A1A !important; padding:10px 18px; text-decoration:none; border-radius:5px; font-weight:bold; font-size:16px; }
+    .lab-wrap a { color:var(--lab-acc); }
+    @media (max-width:760px) {
+      .lab-wrap h1 { font-size:32px; }
+      .lab-route { grid-template-columns:1fr; }
+      .lab-stop { padding:0 0 16px 36px; }
+      .lab-stop::before { top:0; bottom:0; left:9px; right:auto; width:4px; height:auto; }
+      .lab-stop::after { top:0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="cover-image"></div>
+<div class="cover-image-overlay"></div>
+
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Aboutme.html">About</a></li>
+      <li><a href="Workexperience.html">Experience</a></li>
+      <li><a href="Contactme.html">Contact</a></li>
+      <li><a href="Professional Documents.html">Professional Documents</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="Courses.html">Courses</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="Entertainment.html">❤️ Entertainment</a></li>
+    </ul>
+    <button class="mode-toggle-btn" onclick="toggleMode()" id="modeBtn">
+      🌙 Dark
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    </button>
+  </nav>
+</header>
+
+<main class="lab-wrap" id="lab"></main>
+
+<!-- LinkedIn Floating Button -->
+<a href="https://www.linkedin.com/in/rupert-burger-16281b212" class="linkedin-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="linkedin-icon" alt="LinkedIn" />
+</a>
+
+<a href="https://wa.me/27815173861" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WhatsApp" />
+</a>
+
+<script>
+/* The lab fills this in when the page is downloaded */
+var LAB = {"name":"Rupert Burger","updated":"16 Nov 2026","route":[{"name":"CompTIA A+","state":"done","label":"Certified","note":"Foundation"},{"name":"CompTIA Network+","state":"now","label":"In progress","note":"Networks"},{"name":"CompTIA Security+","state":"next","label":"Up next","note":"Security"},{"name":"SOC and blue-team skills","state":"next","label":"Up next","note":"Hands-on defence"},{"name":"Junior SOC analyst","state":"next","label":"Destination","note":"Security analyst role"}],"working":["Studying CompTIA Network+","Project: Rupert Fleet Infrastructure (RFI)"],"tracks":[{"name":"CompTIA A+","why":"Hardware, operating systems and troubleshooting method. Every security job assumes this.","pct":100,"status":"Certified","groups":[{"name":"Core 1","items":[{"t":"Hardware, storage and RAM","done":true},{"t":"Mobile devices and printers","done":true},{"t":"Networking basics and ports","done":true},{"t":"Virtualisation and cloud basics","done":true}]},{"name":"Core 2","items":[{"t":"Windows, macOS and Linux basics","done":true},{"t":"Security basics and malware removal","done":true},{"t":"Software troubleshooting","done":true},{"t":"Operational procedures","done":true}]}]},{"name":"CompTIA Network+","why":"You cannot defend a network you cannot read. Packets, ports and subnets are the language of every alert.","pct":0,"status":"Current focus","groups":[{"name":"1. Networking concepts","items":[{"t":"OSI model and encapsulation","done":false},{"t":"Ports and protocols by heart","done":false},{"t":"IPv4 addressing and subnetting","done":false},{"t":"IPv6 address types","done":false},{"t":"Cloud models, SDN and zero trust basics","done":false},{"t":"Topologies and traffic types","done":false}]},{"name":"2. Network implementation","items":[{"t":"Routing: static, OSPF, BGP, NAT and PAT","done":false},{"t":"Switching: VLANs, trunks, STP, LACP","done":false},{"t":"Wireless standards, channels and security","done":false},{"t":"Cabling, fibre and connectors","done":false},{"t":"Gateway redundancy (VRRP, HSRP)","done":false}]},{"name":"3. Network operations","items":[{"t":"Documentation and diagrams","done":false},{"t":"SNMP, syslog, NetFlow and baselines","done":false},{"t":"DHCP and DNS services in depth","done":false},{"t":"Disaster recovery: RPO, RTO, site types","done":false},{"t":"Remote access: VPN, SSH, jump hosts","done":false}]},{"name":"4. Network security","items":[{"t":"CIA, AAA, RADIUS and 802.1X","done":false},{"t":"Attacks: ARP and DNS poisoning, VLAN hopping, DoS","done":false},{"t":"Switch hardening: port security, DHCP snooping, DAI","done":false},{"t":"Firewalls, ACLs and screened subnets","done":false}]},{"name":"5. Network troubleshooting","items":[{"t":"The seven-step troubleshooting method","done":false},{"t":"Cable and interface faults","done":false},{"t":"IP, DNS and DHCP faults","done":false},{"t":"Wireless faults and interference","done":false},{"t":"Command-line tools: ping, tracert, nslookup, ipconfig","done":false},{"t":"Performance problems: latency, jitter, loss","done":false}]}]},{"name":"CompTIA Security+","why":"The baseline certificate employers ask for in security roles. It turns networking knowledge into defence.","pct":0,"status":"Planned","groups":[{"name":"1. General security concepts","items":[{"t":"CIA triad and control types","done":false},{"t":"Zero trust and AAA","done":false},{"t":"Cryptography: symmetric, asymmetric, hashing","done":false},{"t":"PKI and certificates","done":false},{"t":"Change management","done":false}]},{"name":"2. Threats, vulnerabilities and mitigations","items":[{"t":"Threat actors and motivations","done":false},{"t":"Social engineering","done":false},{"t":"Malware types and indicators","done":false},{"t":"Application attacks: SQLi, XSS, CSRF","done":false},{"t":"Password and network attacks","done":false},{"t":"Mitigation and hardening techniques","done":false}]},{"name":"3. Security architecture","items":[{"t":"Cloud and shared responsibility","done":false},{"t":"Segmentation and secure network design","done":false},{"t":"Data protection: encryption, tokenisation, masking","done":false},{"t":"Resilience and backups","done":false}]},{"name":"4. Security operations","items":[{"t":"Hardening baselines for hosts and devices","done":false},{"t":"Vulnerability management and CVSS","done":false},{"t":"Monitoring: SIEM, EDR, logs","done":false},{"t":"Identity and access management, MFA","done":false},{"t":"Incident response process","done":false},{"t":"Digital forensics and evidence","done":false},{"t":"Email security: SPF, DKIM, DMARC","done":false}]},{"name":"5. Security programme management","items":[{"t":"Policies, standards and procedures","done":false},{"t":"Risk management and calculations","done":false},{"t":"Third-party risk and agreements","done":false},{"t":"Compliance and privacy (POPIA, GDPR)","done":false},{"t":"Security awareness training","done":false}]}]},{"name":"SOC and blue-team skills","why":"What a junior analyst does all day: read logs, triage alerts, write up incidents. Certificates get interviews; this gets the job.","pct":0,"status":"Planned","groups":[{"name":"Detect","items":[{"t":"Read Windows event logs (4624, 4625, 4688, 4720)","done":false},{"t":"Read Linux auth and system logs","done":false},{"t":"Analyse a packet capture in Wireshark","done":false},{"t":"Run a SIEM (Wazuh) and build a detection rule","done":false}]},{"name":"Respond","items":[{"t":"Triage an alert: true or false positive","done":false},{"t":"Map an attack to MITRE ATT&CK","done":false},{"t":"Write an incident report someone else can follow","done":false},{"t":"Investigate a phishing email (headers, links, attachments)","done":false}]},{"name":"Prove it","items":[{"t":"Complete a guided SOC path (TryHackMe SOC Level 1 or similar)","done":false},{"t":"Publish three lab write-ups on your portfolio site","done":false}]}]},{"name":"Windows Server and Linux","why":"Most attacks target Active Directory and Linux servers. Build them yourself and you know what normal looks like.","pct":0,"status":"Planned","groups":[{"name":"Windows Server and Active Directory","items":[{"t":"Install Windows Server and promote a domain controller","done":false},{"t":"Users, groups and organisational units","done":false},{"t":"Group Policy: password and lockout policy","done":false},{"t":"DNS and DHCP roles","done":false},{"t":"File shares with NTFS and share permissions","done":false},{"t":"PowerShell basics for admin tasks","done":false}]},{"name":"Linux","items":[{"t":"Command line and file system navigation","done":false},{"t":"Users, groups, permissions and sudo","done":false},{"t":"Services with systemd and logs with journalctl","done":false},{"t":"SSH keys and firewall (ufw)","done":false},{"t":"Package management and updates","done":false},{"t":"Bash scripting basics","done":false}]}]},{"name":"Web development","why":"You already build real systems. Knowing how web apps work is how you learn to break and fix them, which is application security.","pct":0,"status":"Planned","groups":[{"name":"Front end","items":[{"t":"HTML structure and semantic elements","done":false},{"t":"CSS layout: flexbox and grid","done":false},{"t":"JavaScript fundamentals written from scratch","done":false},{"t":"DOM, events and fetch","done":false}]},{"name":"Back end","items":[{"t":"Node.js and Express routing and middleware","done":false},{"t":"REST APIs and HTTP status codes","done":false},{"t":"MySQL: schema design, joins, indexes","done":false},{"t":"Git and GitHub workflow","done":false}]},{"name":"Secure coding","items":[{"t":"Authentication, sessions and password hashing","done":false},{"t":"Role-based access control","done":false},{"t":"OWASP Top 10: injection, XSS, broken access control","done":false},{"t":"Input validation, secrets and security headers","done":false}]}]},{"name":"Python for automation","why":"The scripting language of security work: parsing logs, calling APIs, automating the boring checks.","pct":0,"status":"Planned","groups":[{"name":"Basics","items":[{"t":"Variables, loops, functions","done":false},{"t":"Files, CSV and JSON","done":false},{"t":"Modules, pip and virtual environments","done":false}]},{"name":"Security scripting","items":[{"t":"Regular expressions for log parsing","done":false},{"t":"Sockets: write a simple port scanner","done":false},{"t":"Requests: call an API (VirusTotal, AbuseIPDB)","done":false},{"t":"Automate a report from log data","done":false},{"t":"Hashing files to check integrity","done":false}]}]}],"labs":[],"skills":[],"intro":"My private IT lab tracks everything I study and build on the way to a career in cybersecurity. This page is the public side of it: my roadmap, what I am working on now, my hands-on labs and my projects.","certs":[{"name":"CompTIA A+ (Core 1 and Core 2)","status":"Earned","date":"Valid until 25 September 2028"},{"name":"CompTIA Network+ (N10-009)","status":"In progress","date":""},{"name":"CompTIA Security+","status":"Planned","date":""},{"name":"Full-stack web development bootcamp","status":"In progress","date":""}],"projects":[{"name":"Portfolio and CV website","status":"Live","stack":"HTML, CSS, JavaScript, GitHub Pages","summary":"Personal portfolio and CV site that shows my IT work and projects.","security":"A public site I own and maintain. Next step: publish lab write-ups here and review its security headers.","link":"rupertitcyberx.co.za"},{"name":"Fleet management web system","status":"Live","stack":"Node.js, Express, MySQL","summary":"Internal fleet management system built as the sole developer: vehicles and drivers register, weekly report generation, service tracking, cost overview and booking reminders, served over the local network.","security":"Role-based access for admin, fleet, management and HOD roles, plus a change audit log that records who changed what. Access control and audit logging are core security controls.","link":""},{"name":"Rupert Fleet Infrastructure (RFI)","status":"In progress","stack":"JavaScript","summary":"Personal fleet and infrastructure system built in my own time to learn to write JavaScript properly. Ten sections, from fleet operations to administration and support.","security":"A clean project to practise secure coding from the first line: authentication, access control and input validation.","link":""},{"name":"Portfolio visitor analytics dashboard","status":"Live","stack":"Google Apps Script, Google Sheets","summary":"Private dashboard that tracks visitors to the portfolio site.","security":"Collecting and reading traffic data is the starting point of monitoring.","link":""},{"name":"Personal IT system","status":"Planned","stack":"","summary":"All-in-one personal IT system: helpdesk, IP address management, cyber security data analysis, login and step-by-step documents.","security":"IP address management and security data analysis connect directly to Network+ and SOC work.","link":""},{"name":"Rupert IT Lab","status":"Live","stack":"HTML, CSS, JavaScript","summary":"This lab: roadmap, practice tests, drills, labs, job log and notes on the route to cybersecurity.","security":"Tracks the evidence for every skill on the route to a security analyst role.","link":""}],"platforms":[{"name":"Professor Messer Network+ (N10-009) video course","use":"Network+ study","link":"https://www.youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8"},{"name":"Jason Dion Network+ (N10-009) course and practice exams on Udemy","use":"Network+ study and exam practice","link":""},{"name":"TryHackMe","use":"Hands-on security rooms","link":"https://tryhackme.com/p/burgerrupert"},{"name":"Hack The Box","use":"Hands-on security practice","link":""},{"name":"Active Directory and Windows Server courses on Udemy","use":"Windows Server and Active Directory labs","link":""},{"name":"The Complete Full-Stack Web Development Bootcamp on Udemy","use":"Web development","link":""},{"name":"Rupert IT Lab","use":"Roadmap, practice tests, drills and lab tracking","link":""}],"activity":[{"n":0,"label":"Study hours logged"},{"n":0,"label":"Study sessions"},{"n":0,"label":"Practice tests taken"},{"n":0,"label":"Practice questions answered"},{"n":0,"label":"Labs completed"},{"n":0,"label":"IT jobs solved and logged"}]};
+
+(function () {
+  var el = document.getElementById("lab");
+  function safe(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function link(u) { if (!u) return ""; var h = /^https?:\/\//.test(u) ? u : "https://" + u; return '<a href="' + safe(h) + '" target="_blank" rel="noopener">' + safe(u.replace(/^https?:\/\//, "").replace(/^www\./, "").split(/[/?]/)[0]) + "</a>"; }
+  function card(title, body) { return body ? '<section class="lab-card"><h2>' + title + "</h2>" + body + "</section>" : ""; }
+  function pill(text) { var c = /Earned|Live|Complete|Certified/.test(text) ? " good" : /progress|Current/i.test(text) ? " now" : ""; return '<span class="lab-pill' + c + '">' + safe(text) + "</span>"; }
+
+  if (!LAB) { el.innerHTML = '<section class="lab-card"><h2>IT Lab</h2><p class="lab-lead">This page is being updated. Please check back soon.</p></section>'; return; }
+
+  var html = '<section class="lab-card"><p class="lab-mut">IT LEARNING LAB · UPDATED ' + safe(LAB.updated) + "</p><h1>" + safe(LAB.name) + " — IT Lab</h1>" +
+    '<p class="lab-lead">' + safe(LAB.intro) + "</p></section>";
+
+  html += '<section class="lab-card"><h2>My route into cybersecurity</h2><div class="lab-route">' + LAB.route.map(function (s) {
+    return '<div class="lab-stop ' + s.state + '"><small>' + safe(s.label) + "</small><b>" + safe(s.name) + '</b><span class="lab-mut">' + safe(s.note) + "</span></div>";
+  }).join("") + "</div></section>";
+
+  var now = LAB.working.map(function (w) { return '<li><span class="lab-tick">▸</span><span>' + safe(w) + "</span></li>"; }).join("");
+  html += card("What I am working on now", now ? '<ul class="lab-list">' + now + "</ul>" : "");
+
+  html += card("Certifications and courses", LAB.certs.length ? '<ul class="lab-list">' + LAB.certs.map(function (c) {
+    return '<li class="lab-row" style="display:flex"><span>' + safe(c.name) + (c.date ? ' <span class="lab-mut">· ' + safe(c.date) + "</span>" : "") + "</span>" + pill(c.status) + "</li>";
+  }).join("") + "</ul>" : "");
+
+  html += '<section class="lab-card"><h2>Roadmap</h2><p class="lab-mut">Every topic on my path. Ticked topics are ones I have worked through. Click a track to open it.</p>' + LAB.tracks.map(function (t) {
+    return '<button class="accordion-btn" type="button"><span>' + safe(t.name) + '</span><span class="lab-mut">' + safe(t.status) + '</span></button><div class="lab-panel">' +
+      '<p class="lab-mut" style="margin-bottom:12px">' + safe(t.why) + "</p>" + (t.pct > 0 && t.pct < 100 ? '<div class="lab-row" style="margin-bottom:14px"><div class="lab-bar"><i style="width:' + t.pct + '%"></i></div><span class="lab-mut">' + t.pct + "%</span></div>" : "") +
+      '<div class="lab-grid">' + t.groups.map(function (g) {
+        return '<div class="lab-item"><h3>' + safe(g.name) + '</h3><ul class="lab-list" style="font-size:15px">' + g.items.map(function (i) {
+          return "<li>" + (i.done ? '<span class="lab-tick">✔</span>' : '<span class="lab-todo">○</span>') + "<span>" + safe(i.t) + "</span></li>";
+        }).join("") + "</ul></div>";
+      }).join("") + "</div></div>";
+  }).join("") + "</section>";
+
+  html += card("Hands-on labs", LAB.labs.length ? '<div class="lab-grid">' + LAB.labs.map(function (l) {
+    return '<div class="lab-item"><div class="lab-row"><h3>' + safe(l.title) + "</h3>" + pill(l.status) + '</div><span class="lab-mut">' + safe(l.track) + "</span><span>" + safe(l.why) + "</span>" + (l.evidence ? '<span class="lab-mut">Evidence: ' + (/^(https?:\/\/|www\.)/.test(l.evidence) ? link(l.evidence) : safe(l.evidence)) + "</span>" : "") + "</div>";
+  }).join("") + "</div>" : "");
+
+  html += card("Projects", LAB.projects.length ? '<div class="lab-grid">' + LAB.projects.map(function (p) {
+    return '<div class="lab-item"><div class="lab-row"><h3>' + safe(p.name) + "</h3>" + pill(p.status) + "</div>" + (p.stack ? '<span class="lab-mut">' + safe(p.stack) + "</span>" : "") + "<span>" + safe(p.summary) + "</span>" +
+      (p.security ? '<span class="lab-mut">Security angle: ' + safe(p.security) + "</span>" : "") + (p.link ? "<span>" + link(p.link) + "</span>" : "") + "</div>";
+  }).join("") + "</div>" : "");
+
+  html += card("Strongest skills", LAB.skills.length ? '<div class="lab-grid">' + LAB.skills.map(function (g) {
+    return '<div class="lab-item"><h3>' + safe(g.group) + '</h3><ul class="lab-list" style="font-size:16px">' + g.items.map(function (s) {
+      return '<li class="lab-row" style="display:flex"><span>' + safe(s.name) + '</span><span class="lab-dots" title="Level ' + s.level + ' of 5">' + "●●●●●".slice(0, s.level) + "</span></li>";
+    }).join("") + "</ul></div>";
+  }).join("") + "</div>" : "");
+
+  html += card("Where I train", LAB.platforms.length ? '<ul class="lab-list">' + LAB.platforms.map(function (p) {
+    return '<li><span class="lab-tick">▸</span><span>' + safe(p.name) + (p.use ? ' <span class="lab-mut">· ' + safe(p.use) + "</span>" : "") + (p.link ? " · " + link(p.link) : "") + "</span></li>";
+  }).join("") + "</ul>" : "");
+
+  var nums = LAB.activity.filter(function (a) { return a.n; }).map(function (a) { return "<div><b>" + safe(a.n) + '</b><span class="lab-mut">' + safe(a.label) + "</span></div>"; }).join("");
+  html += card("Activity in the lab", nums ? '<div class="lab-nums">' + nums + "</div>" : "");
+
+  html += '<section class="lab-card"><h2>More about me</h2><div class="lab-row" style="justify-content:flex-start">' +
+    '<a class="lab-btn" href="index.html">🏠 Home</a><a class="lab-btn" href="Professional Documents.html">📄 My CV</a><a class="lab-btn" href="Certificates.html">🏆 Certificates</a><a class="lab-btn" href="Projects.html">🚀 Projects</a><a class="lab-btn" href="Contactme.html">📞 Contact</a></div></section>';
+
+  el.innerHTML = html;
+
+  var btns = el.querySelectorAll(".accordion-btn");
+  for (var i = 0; i < btns.length; i++) btns[i].addEventListener("click", function () { this.nextElementSibling.classList.toggle("open"); });
+})();
+
+// Dark / Light mode toggle — remembers choice across pages
+function toggleMode() {
+  const isLight = document.body.classList.toggle('light-mode');
+  localStorage.setItem('siteMode', isLight ? 'light' : 'dark');
+  const btn = document.getElementById('modeBtn');
+  btn.innerHTML = isLight
+    ? '☀️ Light <div class="toggle-track"><div class="toggle-thumb"></div></div>'
+    : '🌙 Dark <div class="toggle-track"><div class="toggle-thumb"></div></div>';
+}
+
+(function() {
+  if (localStorage.getItem('siteMode') === 'light') {
+    document.body.classList.add('light-mode');
+    const btn = document.getElementById('modeBtn');
+    if (btn) btn.innerHTML = '☀️ Light <div class="toggle-track"><div class="toggle-thumb"></div></div>';
+  }
+})();
+</script>
+
+<!-- visit logging -->
+<script src="visit-log.js" defer></script>
+
+</body>
+</html>
