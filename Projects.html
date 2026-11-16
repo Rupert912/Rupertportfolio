@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="refresh.css">
+</head>
+
+<body>
+
+<div class="cover-image"></div>
+<div class="cover-image-overlay"></div>
+
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Aboutme.html">About</a></li>
+      <li><a href="Workexperience.html">Experience</a></li>
+      <li><a href="Contactme.html">Contact</a></li>
+      <li><a href="Professional Documents.html">Professional Documents</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="Courses.html">Courses</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="Entertainment.html">❤️ Entertainment</a></li>
+    </ul>
+    <button class="mode-toggle-btn" onclick="toggleMode()" id="modeBtn">
+      🌙 Dark
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    </button>
+  </nav>
+</header>
+
+<main class="pj-wrap">
+
+  <!-- INTRO -->
+  <section class="pj-panel">
+    <p class="pj-kicker">PROJECT SPACE</p>
+    <h1>Projects</h1>
+    <p class="pj-lead">Hands-on IT work I have done to learn, practise and prove my skills: troubleshooting scenarios, networking and security labs, my web development journey and real fleet work. Every project opens as a PDF.</p>
+    <div class="pj-stats">
+      <div><b>29</b><span>PDF projects</span></div>
+      <div><b>10</b><span>A+ labs</span></div>
+      <div><b>9</b><span>Chapter projects</span></div>
+      <div><b>1</b><span>10-day case file</span></div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="pj-panel pj-featured">
+    <p class="pj-kicker">FEATURED PROJECT</p>
+    <h2>IT Contractor – 10-Day Company Systems Rescue</h2>
+    <p>A scenario-based case file: a company hands me a 10-day contract to find and fix every IT problem it has, from PCs that shut down at random to repeated failed logins. I work through it day by day: hardware first, then networking, then security, and finish with a written report.</p>
+    <ol class="pj-days">
+      <li><b>Days 1–3</b><span>Hardware</span></li>
+      <li><b>Days 4–7</b><span>Networking</span></li>
+      <li><b>Days 8–9</b><span>Security</span></li>
+      <li><b>Day 10</b><span>Final report</span></li>
+    </ol>
+    <ul class="pj-skills"><li>Hardware diagnostics</li><li>Networking</li><li>Security</li><li>Documentation</li><li>Reporting</li></ul>
+    <a class="pj-btn" href="https://drive.google.com/file/d/1f47Zt0tyNQI0mm7dOMzdGzuNjKjDjq0q/view?usp=drive_link" target="_blank" rel="noopener">📄 Open the case file (PDF)</a>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="pj-filters" id="pjFilters" role="group" aria-label="Filter projects">
+    <button type="button" class="pj-chip" data-filter="all" aria-pressed="true">All <small>27</small></button>
+    <button type="button" class="pj-chip" data-filter="labs" aria-pressed="false">A+ Labs <small>10</small></button>
+    <button type="button" class="pj-chip" data-filter="chapters" aria-pressed="false">A+ Chapters <small>10</small></button>
+    <button type="button" class="pj-chip" data-filter="web" aria-pressed="false">Web Dev <small>1</small></button>
+    <button type="button" class="pj-chip" data-filter="career" aria-pressed="false">Career Readiness <small>6</small></button>
+  </div>
+
+  <!-- PROJECT CARDS -->
+  <section class="pj-grid" id="pjGrid">
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 01</span>
+        <h3>DHCP vs Static IP Configuration</h3>
+        <p>A workstation can&#x27;t reach the network because of wrong IP settings. I switch it between automatic (DHCP) and a manual static address, then prove it works with ipconfig and ping.</p>
+        <ul class="pj-skills"><li>IPv4</li><li>DHCP</li><li>Static IP</li><li>ipconfig</li><li>ping</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1KAgz1dGqmnNjNhMBH9uxTOSvLv46pZBK/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 02</span>
+        <h3>DNS Troubleshooting – Connected but No Internet</h3>
+        <p>The PC says it&#x27;s connected, but websites won&#x27;t load. I track the fault down to DNS and fix it with Command Prompt and adapter settings.</p>
+        <ul class="pj-skills"><li>DNS</li><li>Command Prompt</li><li>Network adapter</li><li>Root cause</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/16FpxORFkisZOwhqYPAj4h_xNn8wZ0cHN/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 03</span>
+        <h3>Wi-Fi Troubleshooting – Weak Signal and Dropouts</h3>
+        <p>A user has slow Wi-Fi and keeps getting disconnected. I work through Wi-Fi settings, the router page and Device Manager to make it stable.</p>
+        <ul class="pj-skills"><li>Wi-Fi</li><li>Router settings</li><li>Device Manager</li><li>Signal quality</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1l0u7CUE8vWulkMIUadwVjs5ptKdC62lw/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 04</span>
+        <h3>Network Adapter Driver Issue</h3>
+        <p>Connectivity died after a Windows update. I trace it to the network adapter driver and restore it using Device Manager and manufacturer drivers.</p>
+        <ul class="pj-skills"><li>Drivers</li><li>Device Manager</li><li>Windows Update</li><li>Recovery</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/19TryP_gPALc9fNeHNFR207736ro9TsPm/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 05</span>
+        <h3>Basic SOHO Router Setup</h3>
+        <p>A new router goes into a small home or office. I configure it securely through the admin interface and switch on the basic network services.</p>
+        <ul class="pj-skills"><li>Router config</li><li>SOHO network</li><li>Secure setup</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/15lfoYdFrKvLzLrIr59T1PV3qM1kTjysN/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 06</span>
+        <h3>Malware Removal from Scratch</h3>
+        <p>A slow PC with pop-ups is infected. I clean it safely using Safe Mode, Windows Defender and Malwarebytes, then check performance is back.</p>
+        <ul class="pj-skills"><li>Malware removal</li><li>Safe Mode</li><li>Defender</li><li>Malwarebytes</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1SfKK2X1fe06d6fSrQjvnNH5qqeqA4iqW/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 07</span>
+        <h3>User Account Permissions – Least Privilege</h3>
+        <p>A user installed malware because they had admin rights they didn&#x27;t need. I apply least privilege to cut the risk.</p>
+        <ul class="pj-skills"><li>Least privilege</li><li>User accounts</li><li>Access control</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1kCBGo266GA8XFfYAFcGH0zZK6kcjrl1t/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 08</span>
+        <h3>Windows Firewall Configuration</h3>
+        <p>A legitimate application is blocked by the firewall. I allow its traffic without weakening the rest of the protection.</p>
+        <ul class="pj-skills"><li>Windows Firewall</li><li>Allow rules</li><li>Secure by default</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1_HnMw-pK1skcmlSVKIow03jezbns0Crf/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 09</span>
+        <h3>Patch Management – Windows Updates</h3>
+        <p>A system is exposed because security updates are missing. I bring the OS fully up to date and confirm it.</p>
+        <ul class="pj-skills"><li>Patch management</li><li>Windows Update</li><li>Vulnerability</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1mJktkF8rMTmFcwmIeHA3Ck1xEfJzIgLa/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="labs">
+        <span class="pj-tag">A+ Lab · 10</span>
+        <h3>Antivirus Verification and Protection Status</h3>
+        <p>The company wants proof that antivirus is really active. I verify real-time protection and that scanning works.</p>
+        <ul class="pj-skills"><li>Antivirus</li><li>Real-time protection</li><li>Verification</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1NRYkilRgHAbUqojLoc1zJr0dEZRHi9Oe/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 1</span>
+        <h3>Mobile Devices</h3>
+        <p>Phone battery drain, unresponsive touchscreens and Wi-Fi problems on tablets, solved as step-by-step scenarios. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>Mobile</li><li>Battery</li><li>Touchscreen</li><li>Wi-Fi</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1PsqsSBktyD-eM-Wf0SuNJ6ms9nRg2pKZ/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 2</span>
+        <h3>Networking</h3>
+        <p>IP address conflicts, &#x27;Wi-Fi but no internet&#x27; and random Ethernet drops, each worked through from first check to fix. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>IP conflicts</li><li>DNS</li><li>Ethernet</li><li>Troubleshooting</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1zeZ1Q5u5Ied6WUY6wHLo4jUsbxLsdKVh/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 3</span>
+        <h3>Hardware</h3>
+        <p>Random PC shutdowns, a new drive that doesn&#x27;t appear, and more. I explain the method I&#x27;d follow on a real fault. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>Hardware</li><li>Cooling</li><li>PSU</li><li>Storage</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1W53nPPx5XhNxnzJJIRfkqS4VpWxMeXg6/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 4</span>
+        <h3>Virtualization &amp; Cloud</h3>
+        <p>Slow virtual machines, a VM with no network, and choosing secure cloud storage for a small team. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>VMs</li><li>Cloud storage</li><li>Virtual networking</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1MOr-YJb6DS-1Mka7-ZmLG_gQqUXK0pqM/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 5</span>
+        <h3>Hardware &amp; Network Troubleshooting</h3>
+        <p>&#x27;No bootable device&#x27;, freezing during network file copies and lost sound, taken from symptom to cause. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>Boot errors</li><li>Isolation</li><li>Network copies</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/16mQwVPjrQYbFcWSpf2KduGjFa4P5L_uF/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 6</span>
+        <h3>Operating Systems</h3>
+        <p>Profile errors after updates, legacy apps on Windows 11 and Linux permission problems. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>Windows</li><li>Linux</li><li>User profiles</li><li>Permissions</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/12dHhyb820pMgNxnTS-y-inlGfHAf1K7F/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 7</span>
+        <h3>Security</h3>
+        <p>Repeated account lockouts, strange outbound traffic from a workstation and other security incidents, handled step by step. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>Account security</li><li>Incident response</li><li>Firewall</li><li>MFA</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1dbG5ccvKelj44dcgq3vwsFmUxXnLBwch/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 8</span>
+        <h3>Software Troubleshooting</h3>
+        <p>Apps that crash on launch and browsers that crawl while everything else runs fine. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>Application faults</li><li>Browsers</li><li>Diagnosis</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1k7Tt_EbAk7VdOY9jzmWaHtDMqRuyG7w/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Chapter 9</span>
+        <h3>Operational Procedures</h3>
+        <p>Confidential papers left out, safe disposal of old hard drives and good security habits for users. I answer first, then compare with an AI answer to see what I missed.</p>
+        <ul class="pj-skills"><li>Data destruction</li><li>Best practice</li><li>Documentation</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1KnUnXI27y3kBy77HlTNTiFWwYaOBABCN/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="chapters">
+        <span class="pj-tag">A+ Bonus</span>
+        <h3>Gaming PC Build – Client Scenario</h3>
+        <p>A customer wants a gaming PC that lasts 5+ years. I recommend the parts and walk through the full build and setup, from stock check to a working Windows 11 machine.</p>
+        <ul class="pj-skills"><li>PC assembly</li><li>Component choice</li><li>Windows 11</li><li>Customer service</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1Qm1FjwKVBEa0_OY9jzmWaHtDMqRuyG7w/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="web">
+        <span class="pj-tag">Web Development</span>
+        <h3>My Web Development Journey</h3>
+        <p>Where I started in 2020 with Notepad++ and XAMPP, what I learned about HTML tags, classes and CSS, and how this very website grew out of it.</p>
+        <ul class="pj-skills"><li>HTML</li><li>CSS</li><li>Classes &amp; tags</li><li>Self-taught</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1SMsaq0zz1smjLUAv3KXL_m21QdUYZGW5/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="career">
+        <span class="pj-tag">Career Readiness</span>
+        <h3>FuturePath: Cape Town &amp; Cruise Career Portfolio</h3>
+        <p>A PDF portfolio I designed in Canva, built around Cape Town and a future at sea, with favourite places from around the world.</p>
+        <ul class="pj-skills"><li>Canva</li><li>Design</li><li>Planning</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1i0bmV5Sn2M-7yaoSlRMsj703P3BzCcot/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="career">
+        <span class="pj-tag">Career Readiness</span>
+        <h3>Working on a Cruise Ship – Course Project</h3>
+        <p>What I learned from a Udemy course on cruise ship work: seasons, the first 90 days and the certificates everyone needs (STCW, ENG1, seaman&#x27;s book).</p>
+        <ul class="pj-skills"><li>Research</li><li>STCW</li><li>Career planning</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/10wqPNmrD1GAkB7Sk--3rNZ_dAKM-bOO9/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="career">
+        <span class="pj-tag">Career Readiness</span>
+        <h3>Life at Sea – Adaptability Project</h3>
+        <p>How I&#x27;d handle small cabins, long shifts, time away from home and multicultural crews, with real examples of my own resilience.</p>
+        <ul class="pj-skills"><li>Adaptability</li><li>Teamwork</li><li>Resilience</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1Fg-PLfdvrZ1lffvsQ3gK-_htAzBod84X/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="career">
+        <span class="pj-tag">Career Readiness</span>
+        <h3>Working During Holiday Periods</h3>
+        <p>Why I&#x27;m willing to work when demand peaks, and how I still plan rest and recovery.</p>
+        <ul class="pj-skills"><li>Reliability</li><li>Work ethic</li><li>Balance</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1wOnaQx8QOvN3hRXPJegtqXQODuHur3Jy/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="career">
+        <span class="pj-tag">Career Readiness</span>
+        <h3>Waiter – My Service in 16 Steps</h3>
+        <p>My full routine as a waiter, from clocking in to greeting guests goodbye.</p>
+        <ul class="pj-skills"><li>Customer service</li><li>Process</li><li>Hospitality</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1ZhKhpbXj928VFzBPCIz_K4I8ofPtFyLr/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+      <article class="pj-item" data-cat="career">
+        <span class="pj-tag">Career Readiness</span>
+        <h3>Waiter Menu Project</h3>
+        <p>A full restaurant menu I put together for a made-up seafood and burger restaurant.</p>
+        <ul class="pj-skills"><li>Menu design</li><li>Detail</li><li>Hospitality</li></ul>
+        <a class="pj-btn" href="https://drive.google.com/file/d/1tAH-WADelmhaMihnXFZH0WQSl81Q6ixL/view?usp=drive_link" target="_blank" rel="noopener">📄 Open PDF</a>
+      </article>
+  </section>
+
+  <!-- NEXT ON THE ROADMAP -->
+  <section class="pj-panel">
+    <p class="pj-kicker">NEXT ON MY ROADMAP</p>
+    <h2>Network+ and Security+ projects</h2>
+    <p>Projects from my CompTIA Network+ and Security+ studies will appear here as I finish them. Follow my full roadmap and what I am working on right now in my <a href="ITLab.html">IT Lab</a>.</p>
+    <div class="pj-roadmap">
+      <div><b>CompTIA Network+</b><span class="pj-pill now">In progress</span></div>
+      <div><b>CompTIA Security+</b><span class="pj-pill">Planned</span></div>
+    </div>
+  </section>
+
+  <!-- FLEET (kept exactly as before) -->
+  <section class="pj-panel">
+    <p class="pj-kicker">FLEET MANAGEMENT</p>
+    <div class="accordion">
+      <button class="accordion-btn"><b>Fleet Management project guide</b></button>
+      <div class="accordion-content">
+        <p class="Category1">
+          <p class="Category1"><a href="https://drive.google.com/file/d/1bWNFXaVat6Q8wd5SIWtkoEPVzRyr9_S6/view?usp=drive_link" target="_blank" style="display: inline-block; background-color: #26C7BE; color: #1A1A1A; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;"><b>📄 Fleet Management Project Guide (PDF)</b></a></p>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW PROJECTS ARE MADE -->
+  <section class="pj-panel pj-note">
+    <h2>How these projects are made</h2>
+    <p>Some projects are written fully by me. Others are written with help from AI for clarification, structure or problem-solving. When I use AI, I review it, change it and learn from it rather than copying blindly. This page is a record of growth, effort and willingness to learn, not perfection but progress.</p>
+  </section>
+
+</main>
+
+<!-- IT Lab Floating Button -->
+<a href="ITLab.html" class="lab-float" title="My IT Lab" aria-label="My IT Lab">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M9 12l2.2 2.2L15 10"/></svg>
+    <span>LAB</span>
+</a>
+
+<!-- LinkedIn Floating Button -->
+<a href="https://www.linkedin.com/in/rupert-burger-16281b212" class="linkedin-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="linkedin-icon" alt="LinkedIn" />
+</a>
+
+<a href="https://wa.me/27815173861" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WhatsApp" />
+</a>
+
+<script>
+// Fleet accordion (same behaviour as the rest of the site)
+const acc = document.getElementsByClassName("accordion-btn");
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    const panel = this.nextElementSibling;
+    const allPanels = document.querySelectorAll(".accordion-content");
+    allPanels.forEach(p => { if (p !== panel) p.style.display = "none"; });
+    panel.style.display = (panel.style.display === "block") ? "none" : "block";
+  });
+}
+
+// Project filter chips
+(function () {
+  var chips = document.querySelectorAll("#pjFilters .pj-chip");
+  var items = document.querySelectorAll("#pjGrid .pj-item");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var f = chip.getAttribute("data-filter");
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c === chip)); });
+      items.forEach(function (it) {
+        it.hidden = !(f === "all" || it.getAttribute("data-cat") === f);
+      });
+    });
+  });
+})();
+
+function toggleMode() {
+  const isLight = document.body.classList.toggle('light-mode');
+  localStorage.setItem('siteMode', isLight ? 'light' : 'dark');
+  const btn = document.getElementById('modeBtn');
+  btn.innerHTML = isLight
+    ? '☀️ Light <div class="toggle-track"><div class="toggle-thumb"></div></div>'
+    : '🌙 Dark <div class="toggle-track"><div class="toggle-thumb"></div></div>';
+}
+
+(function() {
+  if (localStorage.getItem('siteMode') === 'light') {
+    document.body.classList.add('light-mode');
+    const btn = document.getElementById('modeBtn');
+    if (btn) btn.innerHTML = '☀️ Light <div class="toggle-track"><div class="toggle-thumb"></div></div>';
+  }
+})();
+</script>
+
+<!-- visit logging -->
+<script src="visit-log.js" defer></script>
+
+</body>
+</html>
